@@ -1,0 +1,5 @@
+Step 1: Build my CLI
+Step 2: Welcome my user, and give them information on a specific list of Pokemon
+Step 3: Depending on what list they pick, print the list of Pokemon
+Step 4: They can pick the Pokemon to get more details on it
+Step 5: If they select to exit, then say goodbye and exit
