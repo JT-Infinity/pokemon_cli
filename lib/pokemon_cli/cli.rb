@@ -11,7 +11,14 @@ class PokemonClI::CLI
 
     def menu
         input = gets.strip
-
+        until input == "All my Pokemon have fainted" || input == "I wanna be the very best" do
+            puts "Your Pokemon cannot learn this move, try a different one."
+            puts ""
+            puts "To see a list of Pokemon, enter 'I wanna be the very best'"
+            puts ""
+            puts "To exit the world of Pokemon, enter 'All my Pokemon have fainted'"
+            input = gets.strip
+        end
         if input == "I wanna be the very best"
             API.create_pokemon
             pokemon_list
@@ -27,14 +34,15 @@ class PokemonClI::CLI
     def menu2
         puts "Do you want to see another Pokemon? Yes or No"
         input = gets.strip
+        until input == "No" || input == "Yes" do
+            puts "Your Pokemon cannot learn this move, would you like to try a different one? Yes or No"
+            input = gets.strip
+        end
         if input == "Yes"
             pokemon_list
             menu2
-        elsif input == "No"
+        else input == "No"
             goodbye
-        else
-            invalid_entry
-            menu2
         end
     end
             
@@ -61,6 +69,7 @@ class PokemonClI::CLI
             poke.update_pokemon
          puts " Name: #{poke.name}"
          puts " Type: #{poke.type}"
+         #menu2
         end
     end
 
