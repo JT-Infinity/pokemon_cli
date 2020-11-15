@@ -29,7 +29,7 @@ class PokemonClI::CLI
         input = gets.strip
         if input == "Yes"
             pokemon_list
-            menu
+            menu2
         elsif input == "No"
             goodbye
         else
