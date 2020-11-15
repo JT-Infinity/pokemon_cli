@@ -20,8 +20,8 @@ class PokemonClI::CLI
             goodbye
         else
             invalid_entry
+            menu
         end
-        menu
     end
 
     def menu2
@@ -34,8 +34,8 @@ class PokemonClI::CLI
             goodbye
         else
             invalid_entry
+            menu2
         end
-        menu2
     end
             
 
