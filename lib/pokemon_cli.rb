@@ -6,5 +6,5 @@ require_relative './pokemon_cli/pokemon.rb'
 
 require 'rest-client'
 require 'json'
-require 'httparty'
+require 'open-uri'
 require 'pry'

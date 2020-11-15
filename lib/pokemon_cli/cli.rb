@@ -25,12 +25,12 @@ class PokemonClI::CLI
     end
 
     def menu2
-        puts "Do you want to see another Pokemon? y or n"
+        puts "Do you want to see another Pokemon? Yes or No"
         input = gets.strip
-        if input == "y"
+        if input == "Yes"
             pokemon_list
-            menu 2
-        elsif input == "n"
+            menu
+        elsif input == "No"
             goodbye
         else
             invalid_entry
@@ -53,12 +53,13 @@ class PokemonClI::CLI
 
     def pokemon_selection(pokemon)
         poke = Pokemon.find_by_name(pokemon)
+        #binding.pry
         if poke == nil
             invalid_entry
         else
             poke.update_pokemon
-         puts " Name: #{p.name}"
-         puts " Type: #{p.type}"
+         puts " Name: #{poke.name}"
+         puts " Type: #{poke.type}"
         end
     end
 

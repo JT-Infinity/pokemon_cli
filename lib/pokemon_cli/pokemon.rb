@@ -20,6 +20,12 @@ class Pokemon
     end
     def update_pokemon
         info = API.update_pokemon(self.url)
-        @type = info["type"]
+        #binding.pry
+        types = []
+
+        info["types"].each do |char|
+            types << char["type"]["name"]
+        end
+        @type = types
     end
 end

@@ -1,5 +1,5 @@
 require_relative './pokemon.rb'
-require 'httparty'
+require 'open-uri'
 
 class API
 
@@ -15,9 +15,9 @@ class API
     def self.update_pokemon(url)
 
         url = URI(url)
-        response = Net::HTTP.get(uri)
+        response = Net::HTTP.get(url)
         pokemon = JSON.parse(response)
-        pokemon["result"]["properties"]
+        #pokemon["results"]["properties"]
     end
 
     def self.create_pokemon
