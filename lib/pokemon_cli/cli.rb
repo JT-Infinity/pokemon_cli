@@ -3,7 +3,7 @@ class PokemonClI::CLI
     def call
         puts "Welcome to the wonderful world of Pokemon!"
         puts ""
-        puts "To see a list of Pokemon games, enter 'I wanna be the very best'"
+        puts "To see a list of Pokemon, enter 'I wanna be the very best'"
         puts ""
         puts "To exit the world of Pokemon, enter 'All my Pokemon have fainted'"
         menu
@@ -20,8 +20,8 @@ class PokemonClI::CLI
             goodbye
         else
             invalid_entry
-            menu
         end
+        menu
     end
 
     def menu2
@@ -35,6 +35,7 @@ class PokemonClI::CLI
         else
             invalid_entry
         end
+        menu2
     end
             
 
