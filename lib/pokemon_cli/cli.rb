@@ -6,6 +6,7 @@ class PokemonClI::CLI
         puts "To see a list of Pokemon, enter 'I wanna be the very best'"
         puts ""
         puts "To exit the world of Pokemon, enter 'All my Pokemon have fainted'"
+        API.create_pokemon
         menu
     end
 
@@ -20,7 +21,7 @@ class PokemonClI::CLI
             input = gets.strip
         end
         if input == "I wanna be the very best"
-            API.create_pokemon
+            #API.create_pokemon
             pokemon_list
             menu2
         elsif input == "All my Pokemon have fainted"
@@ -65,10 +66,11 @@ class PokemonClI::CLI
         #binding.pry
         if poke == nil
             invalid_entry
+            pokemon_list
         else
             poke.update_pokemon
          puts " Name: #{poke.name}"
-         puts " Type: #{poke.type}"
+         puts " Type:#{poke.type}"
          #menu2
         end
     end
@@ -79,7 +81,7 @@ class PokemonClI::CLI
 
     def invalid_entry
         puts "Your Pokemon cannot learn this move, try a different one."
-        menu
+        #menu
     end
 
 end

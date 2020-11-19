@@ -7,7 +7,7 @@ class Pokemon
         @@all << self
     end
 
-  def save
+    def save
         @@all << self
     end
     def self.all
@@ -21,10 +21,10 @@ class Pokemon
     def update_pokemon
         info = API.update_pokemon(self.url)
         #binding.pry
-        types = []
+        types = ""
 
         info["types"].each do |char|
-            types << char["type"]["name"]
+            types << " " + char["type"]["name"]
         end
         @type = types
     end
